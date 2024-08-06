@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+    *{
+        font-family: 'Poppins', sans-serif;
+    }
+    body{
+        background-color: rgb(230, 234, 234);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+    .container{
+        background-color: darkcyan;
+        border-radius: 10px;
+        height: 400px;
+        width: 350px;
+        box-shadow: 0 4px 8px 0 rgb(0, 0, 0.2);
+    }
+    .heading1{
+        display: flex;
+        justify-content: center;
+        margin: 20px 0 0 0;
+        font-size: 30px;
+        color: white;
+    }
+    .heading2{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        font-size: 25px;
+        color: black;
+    }
+    .input-container{
+        margin: 20px 20px 10px 20px;
+    }
+    label{
+        color: white;
+        margin: 0 0 5px 15px;
+    }
+    .input-field{
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0 15px 0;
+    }
+    input{
+        outline: none;
+        padding: 0 20px 0 20px;
+        border: 2px solid rgba(255,255,255,0.015);
+        background: rgba(255,255,255,0.35);
+        height:38px;
+        box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.85);
+        border-radius: 50px;
+        font-size: 16px;
+        color: white;
+        
+    }
+    input:focus{
+        border: 2px solid rgba(255,255,255,0.6);
+
+    }
+    .submit-btn{
+        width: 100px;
+        height: 40px;
+        margin-top: 20px;
+        border-radius: 50px;
+        color: black;
+        box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.85);
+    }
+    .submit-btn:hover{
+        background-color: black ;
+        color: white;
+    }
+
+
+
+    </style>
+
+    <script>
+        function login(){
+            let userField = document.getElementById("user").value;
+            let passField = document.getElementById("pass").value;
+
+            if (userField.trim() === '' || passField.trim() === '') {
+                alert('Please enter both username and password');
+                return;
+            }
+
+            localStorage.setItem("username", userField);
+            localStorage.setItem("password", passField);
+
+            window.location.href = "todolist.html";
+        }
+    </script>
+    </script>
+
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="heading1">WELCOME!</h1>
+
+        <h3 class="heading2">Login Form</h3>
+
+        <div class="input-container">
+
+            <div class="input-field">
+                <label for="user">Username</label>
+                <input type="text" name="username" id="user" required />
+            </div>
+
+            <div class="input-field">
+                <label for="pass">Password</label>
+                <input type="password" name="password" id="pass" required/>
+            </div>
+
+            <div class="input-field">
+                <button type="submit" class="submit-btn" onclick="login()">LOGIN</button>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
