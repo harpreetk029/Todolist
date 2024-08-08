@@ -8,10 +8,34 @@
 </head>
 <body>
 
+    <header>
+        <div class="nav-logo"> 
+            <img height="50px" width="" src = "https://play-lh.googleusercontent.com/-HVJ0Nk8pks9-172JJSBsORCJpKd9b2A6E6EcQfVsgQzBQgI5uqsFiy8bGSwscyD_w">
+            <p class="nav-heading">Todo-List</p>
+        </div>
+
+        <nav class="nav1">
+            <ul class="ul1">
+                <p><a href="#">Home</a></li>
+                <p><a href="#">About</a><p>
+            
+                <p>
+                    <button id="logout-btn" onclick="logout()">Logout</button>
+                <p>
+            </ul>
+        </nav>
+    </header>
+          
+    <h3 id="welcome-msg"></h3>
+
     <div class="container">
-        <h1>todos</h1>
+
+        <h3 class="main-heading">Make Your Todo</h3>
+
+        <label for="todo-input"></label>
         <input type="text" id="todo-input" placeholder="Enter your todo">
         <button onclick="addTask()">Add</button>
+
         <ul id="todo-taskList">
             
         </ul>

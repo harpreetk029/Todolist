@@ -22,13 +22,13 @@ function displayTasks() {
 
     tasks.forEach((task, index) => {
         let li = document.createElement("li");
-        li.textContent = task;
+        li.textContent = `${index + 1}. ${task}`;
 
         let deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
         deleteButton.onclick = function() {
            
-            if(confirm ('are you sure to delete it ?')){
+            if(confirm ('Are you sure yoy want delete it ?')){
                 tasks.splice(index, 1);
             localStorage.setItem("tasks", JSON.stringify(tasks));
             displayTasks();
@@ -45,11 +45,26 @@ function loadTasks() {
 }
 
 
-function loginbtn(){
-    window.location.href = "logintodo.html";
-
+function loadTasks() {
+    checkUserInfo();
+    displayTasks();
 }
-
+  
+  function checkUserInfo(){
+    let username = localStorage.getItem("username");
+    if (!username) {  
+      window.location.href = "logintodo.html";
+      return;
+  }
+    
+  let welcomeMsg = document.getElementById("welcome-msg");
+    welcomeMsg.textContent = `Welcome  ${username}`
+  }
+  function logout(){
+    document.getElementById("logout-button");
+    localStorage.clear();
+    window.location.href = "logintodo.html"
+  }
 
 
 
